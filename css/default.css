@@ -1,0 +1,227 @@
+/* -----------------------------------------------
+	
+	Default Style sheet for projects
+
+________________________________________________*/
+
+/* Style defaults */
+html{ font-size:100.01%;}
+body{
+	background: #ffffff;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 75%;
+	color: #222222;
+}
+.success{
+	display: block;
+	text-align: center;
+}
+.error {
+	text-align: center;
+}
+form {
+	padding: 0px;
+	margin: 0px;
+}
+
+
+/* ------------------------
+
+	Nav Bar Styling
+
+------------------------- */
+#nav { width: 100%;}
+#nav { 
+	background: #000046;
+	color: #ffffff;
+}
+#nav_bar{ height: 30px; }
+#nav_bar li{
+	padding: 5px;
+	width: 50px;
+	text-align: center;
+	float:left;
+	font-weight: bold;
+	border-right: 1px solid #dedede;
+	display: inline;
+	list-style-type: none;
+}
+
+#nav_bar li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+/* ------------------------
+
+	Entry Styling
+
+------------------------- */
+#addNewEntry {
+	padding: 0px;
+	background: #303030;
+}
+form { padding: 10px; }
+form p { margin: 0x; }
+.input { width: 80%; border: 1px solid #dedede; padding: 1px;}
+textarea { 
+	width: 99%; 
+	height: 80px; 
+	overflow: hidden; 
+	border: 1px solid #dedede; 
+	padding: 1px;	
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.suggestionBox{
+	position: relative;
+	z-index: 100;
+	background: #fff;
+	color: #212427;
+	border: 1px solid #ededed;
+}
+.suggestionList {
+	margin: 0px;
+	padding: 0px;
+}
+
+.suggestionList li{
+	list-style-type: none;
+	margin: 0px 0px 3px 0px;
+	padding: 3px;
+	cursor: pointer
+}
+.suggestionList li:hover{
+	background: #659cd8;
+}
+
+
+/* ------------------------------
+
+	Project Page Entry Styling
+
+-------------------------------- */
+#head h2 {
+	padding: 10px;
+	color: #f0f8ff;
+	font-weight: bold;
+	width: 100%;
+}
+
+#head-link a {
+	padding: 10px;
+	color: #fff;
+	text-decoration: none;
+	font-style: italic;	
+	text-align: right;
+}
+
+#project {
+	display: block;
+}
+
+#project a#close{
+	padding: 10px;
+	color: #f0f8ff;
+	text-decoration: bold;
+}
+#project label {
+	color: #f0f8ff;
+	font-weight: bold;
+}
+.pItem {
+	display: none;
+}
+#content-project .item h4{
+	
+	color:#f0f8ff;
+}
+
+
+/* ------------------------
+
+	All Task Styling
+
+------------------------- */
+.item { 
+	padding: 10px; 
+	background: #999;
+	border-bottom: 2px solid #ffffff;
+}
+#item-subtext {
+	color: #f0f8ff;
+	font-style: italic;
+}
+
+/* ------------------------
+
+	Sidebar Styling
+
+------------------------- */
+#sidebar {
+	border-top: 2px solid #404040;
+	padding: 0px;
+}
+#s_tabs {
+	width: 100%;  
+	padding: 0px;
+	background-color: #404040;
+}
+#s_tabs li.first {
+	border-left: 0px;
+	width: 33%;
+}
+#s_tabs li {
+	padding: 2px;
+	background: #404040;
+	width: 30%;
+	text-align: center;
+	float:left;
+	font-weight: bold;
+	border-left: 2px solid #dedede;
+	display: inline;
+	color: #fff;
+	list-style-type: none;
+}
+
+#s_tabs a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#s-projects, #s-projects a {
+    background: #999;
+	color:#f0f8ff;
+}
+
+#s-projects a#pclose {
+    text-decoration: none;
+}
+
+/* ------------------------
+
+	Sidebar ToDo Styling
+
+------------------------- */
+#task {
+	background: #000046;
+	color: #fff;
+	padding: 10px;
+	width: 91%;
+	border-bottom: 1px dashed #dedede;
+}
+
+/* ------------------------
+
+	Footer Styling
+
+------------------------- */
+#footer { width: 100%; }
+#footer {
+	margin-top: 20px;
+	font-size: 115%;
+	background: #000046;
+	text-align: center;
+	line-height: 30px;
+	color: #f0f8ff;
+	font-weight: bold;
+}
