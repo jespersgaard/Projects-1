@@ -1,17 +1,12 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/functions.php");
-include("fb.php");
 if(isset($_POST) && sizeof($_POST) > 0){
-	FB::log("posted data");
 	$session = new Session();
 	$auth = new Auth();
 	if($auth->login($_POST['uid'],$_POST['pwd'])){
-		FB::log("Login Successful!");
 		$db = new ProjectsDb();
 		$oUser = $auth->getUser();
-		FB::log($oUser,"User Object");
 		if($db->doesExistByUsername($oUser)){
-			FB::log("User does exist");
 			$session->__set('id',$oUser->id);
 			$session->__set('fullname',$oUser->f_name." ".$oUser->l_name);
 			header("Location: index.php");

@@ -65,14 +65,14 @@ class adLDAP {
     * 
     * @var string
     */   
-	protected $_account_suffix = "@nasadm.local";
+	protected $_account_suffix = "@example.local";
     
     /**
     * The base dn for your domain
     * 
     * @var string
     */
-	protected $_base_dn = "DC=nasadm,DC=local"; 
+	protected $_base_dn = "DC=example,DC=local"; 
 	
     /**
     * Array of domain controllers. Specifiy multiple controllers if you
@@ -80,7 +80,7 @@ class adLDAP {
     * 
     * @var array
     */
-    protected $_domain_controllers = array ("10.20.15.25");
+    protected $_domain_controllers = array ("ipaddress or dc name");
 	
     /**
     * Optional account with higher privileges for searching
@@ -89,8 +89,8 @@ class adLDAP {
     * @var string
     * @var string
     */
-	protected $_ad_username="moodleuser";
-    protected $_ad_password="ttwu21";
+	protected $_ad_username="samAccount";
+    protected $_ad_password="sampass";
     
     /**
     * AD does not return the primary group. http://support.microsoft.com/?kbid=321360
