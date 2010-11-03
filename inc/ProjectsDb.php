@@ -6,7 +6,6 @@ class ProjectsDb {
 	private $_db;
 	
 	public function __construct(){
-		//FB::log("Creating ProjectDb Object");
 		$this->_db = new PDatabase();
 	}
 	
@@ -116,12 +115,9 @@ class ProjectsDb {
 
 	public function doesExistByUsername(&$object){
 		if(is_object($object)){
-			//FB::log("Is of type: OBJECT");
 			$sql = "SELECT id FROM ".$object::TABLE." WHERE username='".$object->username."'";
 			$results = $this->_db->prepare($sql);
 			$results->execute();
-			//FB::log($results,"RESULTS:");
-			//FB::log($results->num_rows,"No. Rows");
 			if(!$results->rowCount()){
 				$exist = $this->save($object);
 			} else {
@@ -133,13 +129,10 @@ class ProjectsDb {
 		return $exist;
 	}
 	
-	public function doesExistByFullName($name){	
-		//FB::log("Is of type: OBJECT");
+	public function doesExistByFullName($name){
 		$sql = "SELECT id FROM tbl_users WHERE f_name='".$name[0]."' AND l_name='".$name[1]."'";
 		$results = $this->_db->prepare($sql);
 		$results->execute();
-		//FB::log($results,"RESULTS:");
-		//FB::log($results->num_rows,"No. Rows");
 		if(!$results->rowCount()){
 			$exist = false;
 		} else {
@@ -150,12 +143,9 @@ class ProjectsDb {
 	}
 	
 	public function doesExistByProjectName($name){
-		//FB::log("Is of type: OBJECT");
 		$sql = "SELECT id FROM tbl_projects WHERE p_name='".$name."'";
 		$results = $this->_db->prepare($sql);
 		$results->execute();
-		//FB::log($results,"RESULTS:");
-		//FB::log($results->num_rows,"No. Rows");
 		if(!$results->rowCount()){
 			$exist = false;
 		} else {
@@ -192,9 +182,7 @@ class ProjectsDb {
 	}
 	
 	public function setTaskDone($id){
-		//FB::log("Inside setTaskDone method");
 		$sql = "UPDATE tbl_task SET is_done='1' WHERE id='$id'";
-		//FB::log($sql, "SQL");
 		print_r($sql);
 		$results = $this->_db->query($sql);
 		
@@ -210,7 +198,6 @@ class ProjectsDb {
 	}
 	
 	public function getProjectsByUserId($id){
-	   //$pperms = new ProjectPerms();
 	   $sql = "SELECT * FROM tbl_project_perms WHERE uid = '".$id."'";
 	   $results = $this->_db->prepare($sql);
 	   $results->execute();
@@ -234,7 +221,6 @@ class ProjectsDb {
 				$add = "";
 			}
 			$sql = "SELECT * FROM ".$object::TABLE." WHERE is_active='1' ORDER BY id desc$add";
-			//FB::log($sql,"SQL");
 			$results = $this->_db->prepare($sql);
 			$results->execute();
 			if($results->rowCount()){
@@ -259,7 +245,6 @@ class ProjectsDb {
 	
 	public function save(&$object){
 		if(is_object($object)){
-			//FB::log("Is of type Object -- SAVE");
 			$sql = "INSERT INTO ".$object::TABLE." (";
 			$fields = $object->getFields();
 			$size = sizeof($fields);
@@ -276,9 +261,7 @@ class ProjectsDb {
 			$sql .= ") VALUES (";
 			$sql .= $object->getInsert();
 			$sql .= ")";
-			//FB::log($sql, "SQL");
 			$results = $this->_db->query($sql);
-			//FB::log($this->mysql->error,"Error!!");
 		}
 		$object->id = $this->_db->lastInsertId();
 		
