@@ -2,7 +2,9 @@
 require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/functions.php");
 if(isset($_POST) && sizeof($_POST) > 0){
 	$session = new Session();
-	$auth = new Auth();
+	$ini = $_SERVER['DOCUMENT_ROOT']."/projects/config.ini";
+        $parse = parse_ini_file($ini , true) ;
+	$auth = new Auth($parse['auth']['type']);
 	if($auth->login($_POST['uid'],$_POST['pwd'])){
 		$db = new ProjectsDb();
 		$oUser = $auth->getUser();
