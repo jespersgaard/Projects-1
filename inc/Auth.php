@@ -22,14 +22,27 @@ class Auth {
 	 * @var object
 	 */
 	protected $_user;
+
+	/**
+	 * Flag for authentication type
+	 * 
+	 * @access protected
+	 * @var bool
+	 */
+	protected $_authflag;
 	
 	/**
 	 * Constructor Method
 	 *
 	 * Instantiates class variables of said object type
 	 */
-	public function __construct(){
-		$this->_ldap = new adLDAP();
+	public function __construct($type){
+		if($type == 'db'){
+			$this->_authFlag = true;
+		} else {
+			$this->_authFlag = false;
+			$this->_ldap = new adLDAP();
+		}
 		$this->_user = new Users();
 	}
 	
@@ -45,12 +58,16 @@ class Auth {
 	 * @return bool
 	 */
 	public function login($username,$password){
-		if($this->_ldap->authenticate($username,$password)){
-			$arrTemp = $this->_ldap->user_info($username);
-			$this->__setUser($arrTemp);
-			return true;
+		if($this->_authFlag){
+					
 		} else {
-			return false;
+			if($this->_ldap->authenticate($username,$password)){
+				$arrTemp = $this->_ldap->user_info($username);
+				$this->__setUser($arrTemp);
+				return true;
+			} else {
+				return false;
+			}
 		}
 	}
 	
