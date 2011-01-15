@@ -1,5 +1,4 @@
 <?php
-//include("fb.php");
 require_once("../inc/ProjectsDb.php");
 
 if(isset($_POST['queryString'])){
