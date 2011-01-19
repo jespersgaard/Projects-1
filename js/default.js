@@ -39,13 +39,13 @@ $(function(){
 			var value = $(this).val();
 			var pid = $('input#pid').val();
 			if($.post("bin/processPerms.php",{"uid":value,"pid":pid})){
-				//location.reload(true);
+				location.reload(true);
 			}
 		} else {
 			var value = $(this).val();
 			var pid = $('input#pid').val();
 			if($.post("bin/processPerms.php",{"uid":value,"pid":pid,"remove":"true"})){
-				//location.reload(true);
+				location.reload(true);
 			}
 		}
 	});

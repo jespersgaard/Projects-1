@@ -92,11 +92,12 @@ function processPidUid($value,&$item){
 	return $return;
 }
 
-function getUsers($bool=false){
+function getUsers($bool=false,$fb){
 	$db = new ProjectsDb();
 	$u = new Users();
 
 	$array = $db->getActiveDesc($u);
+	print_r($array);
 	if(!$bool){
 		if(is_array($array)) {
 			foreach($array as $key=>$value) {
@@ -125,7 +126,7 @@ function getUsers($bool=false){
 	}
 }
 
-function getProjects($id=null){
+function getProjects($id=null,$fb){
 	$db = new ProjectsDb();
 	$p = new Project();
 	if($id==null){
@@ -142,7 +143,7 @@ function getProjects($id=null){
                 echo "</form>";
                 echo "<br/><br/>Time Entries<hr/>";
                 echo "<br/><br/>Permissions<hr/>";
-                getUsers(true);
+                getUsers(true,&$fb);
                 echo "<input type='hidden' name='pid' id='pid' value='$id' />";
                 echo "<br/><br/>Status<hr/>";
                 echo "<a href='projects.php?pid=$id&a=a'>Archive this project</a> | <a href='projects.php?pid=$id&a=d'>Delete THIS Project</a>";
