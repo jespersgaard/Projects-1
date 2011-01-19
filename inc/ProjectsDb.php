@@ -38,7 +38,7 @@ class ProjectsDb {
 		}
 	}
 	
-	public function getSuggestions($query){
+	public function getSuggestions($query, $fb){
 		if(strlen($query)>0){			
 			$arrColl = array();
 			$query = trim($query, "'");
