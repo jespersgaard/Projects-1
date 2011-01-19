@@ -6,7 +6,6 @@ print $_SERVER['DOCUMENT_ROOT'];
 //$fb = FirePHP::getInstance(true);
 
 
-exit();
 
 if(isset($_POST) && sizeof($_POST) > 0){
 	$fb->log("posted data");
