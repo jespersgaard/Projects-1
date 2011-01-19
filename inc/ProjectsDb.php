@@ -219,10 +219,10 @@ class ProjectsDb {
 	   $results->execute();
 	   if($results->rowCount()){
 	       while($row = $results->fetch(PDO::FETCH_ASSOC)){
-	           $pObj = new Project();
-	           $pObj->id = $row['pid'];
-	           $this->getProjectById($pObj);
-	           $tempColl[] = $pObj;
+//	           $pObj = new ProjectPerms();
+	           $tempColl[] = $row['uid'];
+//	           $this->getProjectById($pObj);
+//	           $tempColl[] = $pObj;
 	       }
 	   }
 	   return $tempColl;
