@@ -9,6 +9,8 @@ $pid = $_POST['pid']
 $fb->log($id,"User ID");
 $fb->log($pid,"Project ID");
 
+print_r($_POST);
+
 if(array_key_exist('remove',$_POST)){
     $fb->log("Remove from project");
 	$db->setPerms($id,$pid,true);
