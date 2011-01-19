@@ -10,12 +10,14 @@ $pid = $_POST['pid'];
 $fb->log($_POST,"Posted Items");
 
 
-if(!array_key_exist('remove',$_POST)){
-    $fb->log("Maded it to added to project");
-	$db->setPerms($id,$pid,false,&$fb);
-} else {
+if(sizeof($_POST) > 2){
     $fb->log("Remove from project");
 	$db->setPerms($id,$pid,true,&$fb);
+} else {
+    $fb->log("Maded it to added to project");
+	$db->setPerms($id,$pid,false,&$fb);
 }
+
+
 
 exit();
