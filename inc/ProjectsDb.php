@@ -213,7 +213,7 @@ class ProjectsDb {
 	}
 	
 	public function getProjectPermsById($id,$fb){
-	   $sql = "SELECT * FROM tbl_project_perms as t1 INNER JOIN tbl_projects as t2 ON t1.pid = t2.id WHERE pid = '".$id."' AND t2.is_active = '1' AND t2.is_archived = '0'";
+	   $sql = "SELECT t1.uid FROM tbl_project_perms as t1 INNER JOIN tbl_projects as t2 ON t1.pid = t2.id WHERE pid = '".$id."' AND t2.is_active = '1' AND t2.is_archived = '0'";
 	   $fb->log($sql,"SQL Query");
 	   $results = $this->_db->prepare($sql);
 	   $results->execute();
