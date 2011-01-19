@@ -83,7 +83,7 @@ include("bin/header.php");
 			<div class="span-2">&nbsp;</div><!-- spacer -->
 			<div id="content-project" class="span-10">
 					<?php 
-					getProjects(null,$fb);
+					getProjects();
 					?>
 			</div><!-- end content-task -->
 			<div class="span-2 last">&nbsp;</div><!-- spacer -->

@@ -212,6 +212,21 @@ class ProjectsDb {
 	   return $tempColl;
 	}
 	
+	public function getProjectPermsById($id){
+	   $sql = "SELECT * FROM tbl_project_perms WHERE pid = '".$id."' is_active = '1'";
+	   $results = $this->_db->prepare($sql);
+	   $results->execute();
+	   if($results->rowCount()){
+	       while($row = $results->fetch(PDO::FETCH_ASSOC)){
+	           $pObj = new Project();
+	           $pObj->id = $row['pid'];
+	           $this->getProjectById($pObj);
+	           $tempColl[] = $pObj;
+	       }
+	   }
+	   return $tempColl;
+	}
+	
 	public function getActiveDesc($object,$bool=false){
 		$tempColl = "";
 		if(is_object($object)){
