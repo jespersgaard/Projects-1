@@ -1,6 +1,5 @@
 <?php
-//require_once('fb.php');
-require_once("../inc/ProjectsDb.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/ProjectsDb.php");
 
 $tid = $_POST['task_item'];
 

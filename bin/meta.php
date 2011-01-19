@@ -1,5 +1,5 @@
 <?php
-require_once("../inc/ProjectsDb.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/ProjectsDb.php");
 
 if(isset($_POST['queryString'])){
 	$db = new ProjectsDb();
