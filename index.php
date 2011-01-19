@@ -1,6 +1,8 @@
 <?php 
 //require_once('fb.php');
 require_once('./inc/functions.php');
+print $_SERVER['DOCUMENT_ROOT'];
+exit();
 
 $session = new Session();
 
