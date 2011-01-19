@@ -183,18 +183,18 @@ class ProjectsDb {
 	
 	public function setTaskDone($id){
 		$sql = "UPDATE tbl_task SET is_done='1' WHERE id='$id'";
-		print_r($sql);
 		$results = $this->_db->query($sql);
 		
 	}
 	
-	public function setPerms($id,$pid,$bool = false){
+	public function setPerms($id,$pid,$bool = false,$fb){
 		if(!$bool){
 			$sql = "INSERT INTO tbl_project_perms (pid,uid,is_creator) VALUES ('".$pid."','".$id."',0)";
 		} else {
 			$sql = "DELETE FROM tbl_project_perms WHERE uid='".$id."'";
 		}
-		$this->_db->query($sql);
+		$results = $this->_db->query($sql);
+	    $fb->log($results,"Query Results");
 	}
 	
 	public function getProjectsByUserId($id){
