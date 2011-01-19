@@ -19,7 +19,7 @@ $(function(){
 	});
 	
 	$('.sb_projects').click(function(){
-        $("#s-projects").show('slow');	
+        $("#s-projects").slideToggle('slow');	
 	});
 	$('a#pclose').click(function(){
 	   $("#s-projects").hide('slow');

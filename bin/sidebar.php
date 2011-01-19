@@ -7,6 +7,9 @@
 			<div id="s-views">
 			</div>
 			<div id="s-people">
+			<?php
+			
+			?>
 			</div>
 			<div id="s-projects">
 			<?php
