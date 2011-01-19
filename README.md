@@ -11,3 +11,4 @@ TODO
 
 1. Finish adding MySQL auth
 2. Full documentation for each object
+3. Fix issue with Projects and Active Projects with users
