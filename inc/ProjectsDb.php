@@ -45,7 +45,9 @@ class ProjectsDb {
 			if(strcasecmp("t",$query) == 0){
 				$arrColl[] = "TODO";
 			} 
+			$fb->log($query,"Passed Query String");
 			$sql = "SELECT p_name FROM tbl_projects WHERE p_name LIKE '".$query."%'";
+			$fb->log($sql,"SQL Query Project");
 			$results = $this->_db->prepare($sql);
 			$results->execute();
 			if($results->rowCount()){
@@ -54,6 +56,7 @@ class ProjectsDb {
 				}
 			}
 			$sql = "SELECT f_name, l_name FROM tbl_users WHERE f_name LIKE '".$query."%'";
+			$fb->log($sql,"SQL Query User");
 			$results = $this->_db->prepare($sql);
 			$results->execute();
 			if($results->rowCount()){
