@@ -1,6 +1,7 @@
 <?php 
-//require_once('fb.php');
 require_once('inc/functions.php');
+include("FirePHP.class.php");
+$fb = FirePHP::getInstance(true);
 
 $session = new Session();
 
@@ -11,7 +12,7 @@ if(!isset($id)){
 }
 
 $status = "";
-
+ob_start();
 if(isset($_POST) && sizeof($_POST)>0){
 	$db = new ProjectsDb();
 	if($_POST['addEntry']){

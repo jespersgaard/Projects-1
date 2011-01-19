@@ -198,7 +198,7 @@ class ProjectsDb {
 	}
 	
 	public function getProjectsByUserId($id){
-	   $sql = "SELECT * FROM tbl_project_perms WHERE uid = '".$id."'";
+	   $sql = "SELECT * FROM tbl_project_perms as t1 INNER JOIN tbl_projects as t2 ON t1.pid = t2.id WHERE uid = '".$id."' AND t2.is_active = '1' AND t2.is_archived = '0'";
 	   $results = $this->_db->prepare($sql);
 	   $results->execute();
 	   if($results->rowCount()){
