@@ -97,7 +97,7 @@ function getUsers($bool=false,$fb){
 	$u = new Users();
 
 	$array = $db->getActiveDesc($u);
-	print_r($array);
+	$fb->log($array);
 	if(!$bool){
 		if(is_array($array)) {
 			foreach($array as $key=>$value) {
