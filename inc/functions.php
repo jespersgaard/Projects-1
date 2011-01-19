@@ -112,17 +112,17 @@ function getUsers($bool=false,$pid=null){
 	} else {
 		$arrActiveP = $db->getProjectPermsById($pid);
 		if(is_array($array) && is_array($arrActiveP)){
-            foreach($arrActiveP as $column=>$pValue){
+            //foreach($arrActiveP as $column=>$pValue){
                 foreach($array as $key => $value){
                     $fullname = $value->f_name . " ". $value->l_name;
                     $id = $value->id;
-                    if($id == $pValue){
+                    if(in_array($id, $arrActiveP)){
                         echo "<input type='checkbox' name='pPerms' class='pPerms' value='$id' checked='checked' />$fullname";
                     } else {
                         echo "<input type='checkbox' name='pPerms' class='pPerms' value='$id' />$fullname";
                     }
                 }
-			}
+			//}
 		}
 	}
 }
