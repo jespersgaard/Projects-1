@@ -55,9 +55,9 @@ function getAllView($bool=false){
 			}
 			if($value->is_todo){
 				if($value->is_done){
-					$todo = "<input type='checkbox' id='todo' value='$id' checked='checked' />";
+					$todo = "<input type='checkbox' class='todo' value='$id' checked='checked' />";
 				} else {
-					$todo = "<input type='checkbox' id='todo' value='$id' />";
+					$todo = "<input type='checkbox' class='todo' value='$id' />";
 				}
 			} else {
 				$todo = "";

@@ -29,7 +29,7 @@ $(function(){
 		if($(this)[0].checked){
 			var value = $(this).val();
 			if($.post("bin/processTask.php",{"task_item":value})){
-				location.reload();
+				location.reload(true);
 			}
 		}
 	});
@@ -39,13 +39,13 @@ $(function(){
 			var value = $(this).val();
 			var pid = $('input#pid').val();
 			if($.post("bin/processPerms.php",{"uid":value,"pid":pid})){
-				location.reload();
+				location.reload(true);
 			}
 		} else {
 			var value = $(this).val();
 			var pid = $('input#pid').val();
 			if($.post("bin/processPerms.php",{"uid":value,"pid":pid,"remove":"true"})){
-				location.reload();
+				location.reload(true);
 			}
 		}
 	});
