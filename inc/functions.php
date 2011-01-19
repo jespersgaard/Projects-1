@@ -92,7 +92,7 @@ function processPidUid($value,&$item){
 	return $return;
 }
 
-function getUsers($bool=false,$pid=null,$fb){
+function getUsers($bool=false,$pid=null){
 	$db = new ProjectsDb();
 	$u = new Users();
 
@@ -110,26 +110,22 @@ function getUsers($bool=false,$pid=null,$fb){
 			}
 		} 
 	} else {
-        $fb->log($pid,"Project ID");
-		$arrActiveP = $db->getProjectPermsById($pid,&$fb);
-		$fb->log($arrActiveP, "Active projects permissions");
+		$arrActiveP = $db->getProjectPermsById($pid);
 		if(is_array($array) && is_array($arrActiveP)){
-            //foreach($arrActiveP as $column=>$pValue){
-                foreach($array as $key => $value){
-                    $fullname = $value->f_name . " ". $value->l_name;
-                    $id = $value->id;
-                    if(in_array($id, $arrActiveP)){
-                        echo "<input type='checkbox' name='pPerms' class='pPerms' value='$id' checked='checked' />$fullname";
-                    } else {
-                        echo "<input type='checkbox' name='pPerms' class='pPerms' value='$id' />$fullname";
-                    }
+            foreach($array as $key => $value){
+                $fullname = $value->f_name . " ". $value->l_name;
+                $id = $value->id;
+                if(in_array($id, $arrActiveP)){
+                    echo "<input type='checkbox' name='pPerms' class='pPerms' value='$id' checked='checked' />$fullname";
+                } else {
+                    echo "<input type='checkbox' name='pPerms' class='pPerms' value='$id' />$fullname";
                 }
-			//}
+            }
 		}
 	}
 }
 
-function getProjects($id=null, $fb){
+function getProjects($id=null){
 	$db = new ProjectsDb();
 	$p = new Project();
 	if($id==null){
@@ -146,7 +142,7 @@ function getProjects($id=null, $fb){
                 echo "</form>";
                 echo "<br/><br/>Time Entries<hr/>";
                 echo "<br/><br/>Permissions<hr/>";
-                getUsers(true,$id,&$fb);
+                getUsers(true,$id);
                 echo "<input type='hidden' name='pid' id='pid' value='$id' />";
                 echo "<br/><br/>Status<hr/>";
                 echo "<a href='projects.php?pid=$id&a=a'>Archive this project</a> | <a href='projects.php?pid=$id&a=d'>Delete THIS Project</a>";

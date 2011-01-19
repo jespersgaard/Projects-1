@@ -1,7 +1,5 @@
 <?php 
 require_once('inc/functions.php');
-include("FirePHP.class.php");
-$fb = FirePHP::getInstance(true);
 
 $session = new Session();
 
