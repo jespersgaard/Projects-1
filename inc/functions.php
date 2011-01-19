@@ -110,6 +110,7 @@ function getUsers($bool=false,$pid=null,$fb){
 			}
 		} 
 	} else {
+        $fb->log($pid,"Project ID");
 		$arrActiveP = $db->getProjectPermsById($pid,&$fb);
 		$fb->log($arrActiveP, "Active projects permissions");
 		if(is_array($array) && is_array($arrActiveP)){
