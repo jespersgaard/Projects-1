@@ -212,8 +212,9 @@ class ProjectsDb {
 	   return $tempColl;
 	}
 	
-	public function getProjectPermsById($id){
+	public function getProjectPermsById($id,$fb){
 	   $sql = "SELECT * FROM tbl_project_perms WHERE pid = '".$id."' is_active = '1'";
+	   $fb->log($sql,"SQL Query");
 	   $results = $this->_db->prepare($sql);
 	   $results->execute();
 	   if($results->rowCount()){
