@@ -11,7 +11,7 @@ if(isset($_POST['queryString'])){
 		list($throwAway,$qString) = preg_split("/, /",$qString);
 	}
 	$fb->log($qString,"Query String");
-	$arrSuggest = $db->getSuggestions($qString);
+	$arrSuggest = $db->getSuggestions($qString,$fb);
 	foreach($arrSuggest as $key => $value){
 		echo "<li onClick=\"fill('".$value."');\">".$value."</li>";
 	}

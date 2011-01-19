@@ -1,6 +1,7 @@
 <?php
 
 include_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/PDatabase.php");
+include("FirePHP.class.php");
 
 class ProjectsDb {
 	private $_db;
@@ -38,7 +39,7 @@ class ProjectsDb {
 		}
 	}
 	
-	public function getSuggestions($query){
+	public function getSuggestions($query,$fb){
 		if(strlen($query)>0){			
 			$arrColl = array();
 			$query = trim($query, "'");
