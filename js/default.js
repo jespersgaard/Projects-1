@@ -12,7 +12,7 @@ $(function(){
 		$("#project").show('slow');
 	});
 	$('a#close').click(function(){
-		$("#project").hide('slow');
+		$("#project").slideToggle('slow');
 	});
 	$('.item h4').click(function(){
 		$(this).next().slideToggle();
