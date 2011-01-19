@@ -1,21 +1,22 @@
 <?php
 print "Made it!";
-//require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/functions.php");
+require_once($_SERVER['DOCUMENT_ROOT'].'/projects/inc/functions.php');
 print $_SERVER['DOCUMENT_ROOT'];
-//include("FirePHP.class.php");
-//$fb = FirePHP::getInstance(true);
+include("FirePHP.class.php");
+$fb = FirePHP::getInstance(true);
+print_r($fb);
 
 
 
 if(isset($_POST) && sizeof($_POST) > 0){
-	$fb->log("posted data");
+	//$fb->log("posted data");
 	$session = new Session();
 	$auth = new Auth();
 	if($auth->login($_POST['uid'],$_POST['pwd'])){
-		$fb->::log("Login Successful!");
+		//$fb->::log("Login Successful!");
 		$db = new ProjectsDb();
 		$oUser = $auth->getUser();
-		$fb->log($oUser,"User Object");
+		//$fb->log($oUser,"User Object");
 		if($db->doesExistByUsername($oUser)){
 			$fb->log("User does exist");
 			$session->__set('id',$oUser->id);
