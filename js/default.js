@@ -37,15 +37,17 @@ $(function(){
 	$('.pPerms').change(function(){
 		if($(this)[0].checked){
 			var value = $(this).val();
-			var pid = $(this).next('input#pid').val();
+			//var pid = $(this).next('input#pid').val();
+			var pid = $('input#pid').val();
 			if($.post("bin/processPerms.php",{"uid":value,"pid":pid})){
-				//location.reload();
+				location.reload();
 			}
 		} else {
 			var value = $(this).val();
-			var pid = $(this).next('input#pid').val();
+			//var pid = $(this).next('input#pid').val();
+			var pid = $('input#pid').val();
 			if($.post("bin/processPerms.php",{"uid":value,"pid":pid,"remove":"true"})){
-				//location.reload();
+				location.reload();
 			}
 		}
 	});
