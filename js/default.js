@@ -39,16 +39,17 @@ $(function(){
 			var value = $(this).val();
 			//var pid = $(this).next('input#pid').val();
 			var pid = $('input#pid').val();
-			if($.post("bin/processPerms.php",{"uid":value,"pid":pid})){
-				location.reload();
-			}
+			/*if(*/$.post("bin/processPerms.php",{"uid":value,"pid":pid});//){
+				//location.reload();
+				
+			//}
 		} else {
 			var value = $(this).val();
 			//var pid = $(this).next('input#pid').val();
 			var pid = $('input#pid').val();
-			if($.post("bin/processPerms.php",{"uid":value,"pid":pid,"remove":"true"})){
-				location.reload();
-			}
+			/*if(*/$.post("bin/processPerms.php",{"uid":value,"pid":pid,"remove":"true"});//){
+			/*	location.reload();
+			}*/
 		}
 	});
 });
