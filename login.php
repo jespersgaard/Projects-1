@@ -3,6 +3,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/functions.php");
 print $_SERVER['DOCUMENT_ROOT'];
 include("FirePHP.class.php");
 $fb = FirePHP::getInstance(true);
+print "Made it!";
+
+exit();
 
 if(isset($_POST) && sizeof($_POST) > 0){
 	$fb->log("posted data");
