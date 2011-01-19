@@ -15,7 +15,7 @@
 		<script type="text/javascript" src="/projects/js/jqueyr.autocomplete.min.js"></script> -->
 	</head>
 	<body>
-	<h1>Projects</h1>
+	<h1>Projects</h1><h6>BETA</h6>
 	<div id="nav">
 		<ul id="nav_bar">
 			<li><a href="/projects/">Home</a></li>
