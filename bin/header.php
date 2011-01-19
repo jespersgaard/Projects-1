@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Projects</title>
+		<title>Projects (BETA)</title>
 		<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
 		<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />	
 		<!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
@@ -15,7 +15,7 @@
 		<script type="text/javascript" src="/projects/js/jqueyr.autocomplete.min.js"></script> -->
 	</head>
 	<body>
-	<h1>Projects<h6>BETA</h6></h1>
+	<h1>Projects (BETA)</h1>
 	<div id="nav">
 		<ul id="nav_bar">
 			<li><a href="/projects/">Home</a></li>
