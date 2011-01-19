@@ -104,7 +104,7 @@ function getUsers($bool=false){
 				$id = $value->id;
 				echo "<div class='item'><h4>$fullname</h4>\n";
 				echo "<div id='pItem'>";
-				
+				getProjectByUserId($id);
 				echo "</div>";
 				echo "</div>";
 			}
