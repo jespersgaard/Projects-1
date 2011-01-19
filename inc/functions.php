@@ -92,7 +92,7 @@ function processPidUid($value,&$item){
 	return $return;
 }
 
-function getUsers($bool=false,$pid=null){
+function getUsers($bool=false,$pid=null,$fb){
 	$db = new ProjectsDb();
 	$u = new Users();
 
@@ -111,6 +111,7 @@ function getUsers($bool=false,$pid=null){
 		} 
 	} else {
 		$arrActiveP = $db->getProjectPermsById($pid);
+		$fb->log($arrActiveP, "Active projects permissions");
 		if(is_array($array) && is_array($arrActiveP)){
             //foreach($arrActiveP as $column=>$pValue){
                 foreach($array as $key => $value){
@@ -127,7 +128,7 @@ function getUsers($bool=false,$pid=null){
 	}
 }
 
-function getProjects($id=null){
+function getProjects($id=null, $fb){
 	$db = new ProjectsDb();
 	$p = new Project();
 	if($id==null){
@@ -144,7 +145,7 @@ function getProjects($id=null){
                 echo "</form>";
                 echo "<br/><br/>Time Entries<hr/>";
                 echo "<br/><br/>Permissions<hr/>";
-                getUsers(true,$id);
+                getUsers(true,$id,&$fb);
                 echo "<input type='hidden' name='pid' id='pid' value='$id' />";
                 echo "<br/><br/>Status<hr/>";
                 echo "<a href='projects.php?pid=$id&a=a'>Archive this project</a> | <a href='projects.php?pid=$id&a=d'>Delete THIS Project</a>";
