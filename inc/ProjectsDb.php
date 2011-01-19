@@ -39,16 +39,18 @@ class ProjectsDb {
 		}
 	}
 	
-	public function getSuggestions($query, $fb){
+	public function getSuggestions($query){
 		if(strlen($query)>0){			
 			$arrColl = array();
 			$query = trim($query, "'");
 			if(strcasecmp("t",$query) == 0){
 				$arrColl[] = "TODO";
 			} 
-			$fb->log($query,"Passed Query String");
+			print $query;
+			//$fb->log($query,"Passed Query String");
 			$sql = "SELECT p_name FROM tbl_projects WHERE p_name LIKE '".$query."%'";
-			$fb->log($sql,"SQL Query Project");
+			//$fb->log($sql,"SQL Query Project");
+			print $sql;
 			$results = $this->_db->prepare($sql);
 			$results->execute();
 			if($results->rowCount()){
@@ -57,7 +59,8 @@ class ProjectsDb {
 				}
 			}
 			$sql = "SELECT f_name, l_name FROM tbl_users WHERE f_name LIKE '".$query."%'";
-			$fb->log($sql,"SQL Query User");
+			//$fb->log($sql,"SQL Query User");
+			print $sql;
 			$results = $this->_db->prepare($sql);
 			$results->execute();
 			if($results->rowCount()){
