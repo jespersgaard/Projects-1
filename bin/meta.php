@@ -1,7 +1,10 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/ProjectsDb.php");
+include("FirePHP.class.php");
+$fb = FirePHP::getInstance(true);
 
 if(isset($_POST['queryString'])){
+    $fb->log("posted data");
 	$db = new ProjectsDb();
 	$qString = $_POST['queryString'];
 	if(preg_match("/, /",$qString)){
