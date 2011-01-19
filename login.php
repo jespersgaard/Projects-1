@@ -2,8 +2,8 @@
 print "Made it!";
 //require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/functions.php");
 print $_SERVER['DOCUMENT_ROOT'];
-include("FirePHP.class.php");
-$fb = FirePHP::getInstance(true);
+//include("FirePHP.class.php");
+//$fb = FirePHP::getInstance(true);
 
 
 exit();
