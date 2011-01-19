@@ -1,7 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/projects/inc/ProjectsDb.php");
-include("FirePHP.class.php");
-$fb = FirePHP::getInstance(true);
+
 
 $db = new ProjectsDb();
 $id = $_POST['uid'];
